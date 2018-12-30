@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using EFPlusAuditLog.Web.Models;
 
 namespace EFPlusAuditLog.Web
 {
@@ -32,6 +34,9 @@ namespace EFPlusAuditLog.Web
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            services.AddDbContext<EFPContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("EFPContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,7 +58,7 @@ namespace EFPlusAuditLog.Web
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Default}/{action=Index}/{id?}");
+                    template: "{controller=Terminals}/{action=Index}/{id?}");
             });
         }
     }

@@ -25,3 +25,8 @@ C:\Users\hoseini.h\source\repos\EFPlusAuditLog\EFPlusAuditLog.Web\obj\Debug\netc
 C:\Users\hoseini.h\source\repos\EFPlusAuditLog\EFPlusAuditLog.Web\obj\Debug\netcoreapp2.2\EFPlusAuditLog.Web.pdb
 C:\Users\hoseini.h\source\repos\EFPlusAuditLog\EFPlusAuditLog.Web\obj\Debug\netcoreapp2.2\EFPlusAuditLog.Web.csproj.CopyComplete
 C:\Users\hoseini.h\source\repos\EFPlusAuditLog\EFPlusAuditLog.Web\obj\Debug\netcoreapp2.2\Razor\Views\Default\Index.g.cshtml.cs
+C:\Users\hoseini.h\source\repos\EFPlusAuditLog\EFPlusAuditLog.Web\obj\Debug\netcoreapp2.2\Razor\Views\Terminals\Create.g.cshtml.cs
+C:\Users\hoseini.h\source\repos\EFPlusAuditLog\EFPlusAuditLog.Web\obj\Debug\netcoreapp2.2\Razor\Views\Terminals\Delete.g.cshtml.cs
+C:\Users\hoseini.h\source\repos\EFPlusAuditLog\EFPlusAuditLog.Web\obj\Debug\netcoreapp2.2\Razor\Views\Terminals\Details.g.cshtml.cs
+C:\Users\hoseini.h\source\repos\EFPlusAuditLog\EFPlusAuditLog.Web\obj\Debug\netcoreapp2.2\Razor\Views\Terminals\Edit.g.cshtml.cs
+C:\Users\hoseini.h\source\repos\EFPlusAuditLog\EFPlusAuditLog.Web\obj\Debug\netcoreapp2.2\Razor\Views\Terminals\Index.g.cshtml.cs
