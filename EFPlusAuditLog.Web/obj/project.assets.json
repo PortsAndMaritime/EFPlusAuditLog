@@ -4720,6 +4720,18 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
+      },
+      "Z.EntityFramework.Plus.EFCore/1.8.18": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Relational": "2.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Z.EntityFramework.Plus.EFCore.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Z.EntityFramework.Plus.EFCore.dll": {}
+        }
       }
     }
   },
@@ -12935,6 +12947,23 @@
         "system.xml.xpath.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xdocument.nuspec"
       ]
+    },
+    "Z.EntityFramework.Plus.EFCore/1.8.18": {
+      "sha512": "MGPjBMq6uxk7X+PydSxOxyay31epqQOBFqUICI76SDBW7PtzYDqYZtIN60G+FUG1lyRqWc0QTQmjtnmmjz1wlQ==",
+      "type": "package",
+      "path": "z.entityframework.plus.efcore/1.8.18",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard1.3/Z.EntityFramework.Plus.EFCore.deps.json",
+        "lib/netstandard1.3/Z.EntityFramework.Plus.EFCore.dll",
+        "lib/netstandard1.3/Z.EntityFramework.Plus.EFCore.xml",
+        "lib/netstandard2.0/Z.EntityFramework.Plus.EFCore.deps.json",
+        "lib/netstandard2.0/Z.EntityFramework.Plus.EFCore.dll",
+        "lib/netstandard2.0/Z.EntityFramework.Plus.EFCore.xml",
+        "z.entityframework.plus.efcore.1.8.18.nupkg.sha512",
+        "z.entityframework.plus.efcore.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
@@ -12942,7 +12971,8 @@
       "Microsoft.AspNetCore.App >= 2.2.0",
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
       "Microsoft.NETCore.App >= 2.2.0",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.2.0"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.2.0",
+      "Z.EntityFramework.Plus.EFCore >= 1.8.18"
     ]
   },
   "packageFolders": {
@@ -13006,6 +13036,10 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[2.2.0, )"
+          },
+          "Z.EntityFramework.Plus.EFCore": {
+            "target": "Package",
+            "version": "[1.8.18, )"
           }
         },
         "imports": [
