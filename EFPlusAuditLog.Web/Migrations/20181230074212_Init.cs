@@ -64,10 +64,35 @@ namespace EFPlusAuditLog.Web.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "branches",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Name = table.Column<string>(nullable: true),
+                    TerminalId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_branches", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_branches_Terminal_TerminalId",
+                        column: x => x.TerminalId,
+                        principalTable: "Terminal",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AuditEntryProperties_AuditEntryID",
                 table: "AuditEntryProperties",
                 column: "AuditEntryID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_branches_TerminalId",
+                table: "branches",
+                column: "TerminalId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -76,10 +101,13 @@ namespace EFPlusAuditLog.Web.Migrations
                 name: "AuditEntryProperties");
 
             migrationBuilder.DropTable(
-                name: "Terminal");
+                name: "branches");
 
             migrationBuilder.DropTable(
                 name: "AuditEntries");
+
+            migrationBuilder.DropTable(
+                name: "Terminal");
         }
     }
 }

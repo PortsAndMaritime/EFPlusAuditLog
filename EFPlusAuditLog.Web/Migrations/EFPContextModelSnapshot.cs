@@ -19,6 +19,23 @@ namespace EFPlusAuditLog.Web.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("EFPlusAuditLog.Web.Models.Branch", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name");
+
+                    b.Property<int>("TerminalId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TerminalId");
+
+                    b.ToTable("branches");
+                });
+
             modelBuilder.Entity("EFPlusAuditLog.Web.Models.Terminal", b =>
                 {
                     b.Property<int>("Id")
@@ -88,6 +105,14 @@ namespace EFPlusAuditLog.Web.Migrations
                     b.HasIndex("AuditEntryID");
 
                     b.ToTable("AuditEntryProperties");
+                });
+
+            modelBuilder.Entity("EFPlusAuditLog.Web.Models.Branch", b =>
+                {
+                    b.HasOne("EFPlusAuditLog.Web.Models.Terminal", "Terminal")
+                        .WithMany("Branches")
+                        .HasForeignKey("TerminalId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Z.EntityFramework.Plus.AuditEntryProperty", b =>

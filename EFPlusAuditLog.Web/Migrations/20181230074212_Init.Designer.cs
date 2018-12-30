@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EFPlusAuditLog.Web.Migrations
 {
     [DbContext(typeof(EFPContext))]
-    [Migration("20181230072737_Init")]
+    [Migration("20181230074212_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -20,6 +20,23 @@ namespace EFPlusAuditLog.Web.Migrations
                 .HasAnnotation("ProductVersion", "2.2.0-rtm-35687")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("EFPlusAuditLog.Web.Models.Branch", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name");
+
+                    b.Property<int>("TerminalId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TerminalId");
+
+                    b.ToTable("branches");
+                });
 
             modelBuilder.Entity("EFPlusAuditLog.Web.Models.Terminal", b =>
                 {
@@ -90,6 +107,14 @@ namespace EFPlusAuditLog.Web.Migrations
                     b.HasIndex("AuditEntryID");
 
                     b.ToTable("AuditEntryProperties");
+                });
+
+            modelBuilder.Entity("EFPlusAuditLog.Web.Models.Branch", b =>
+                {
+                    b.HasOne("EFPlusAuditLog.Web.Models.Terminal", "Terminal")
+                        .WithMany("Branches")
+                        .HasForeignKey("TerminalId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Z.EntityFramework.Plus.AuditEntryProperty", b =>

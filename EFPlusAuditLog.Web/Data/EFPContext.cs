@@ -22,5 +22,7 @@ namespace EFPlusAuditLog.Web.Models
         public DbSet<AuditEntryProperty> AuditEntryProperties { get; set; }
 
         public DbSet<Terminal> Terminal { get; set; }
+
+        public DbSet<Branch> branches { get; set; }
     }
 }
