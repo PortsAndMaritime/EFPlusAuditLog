@@ -6,12 +6,15 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using EFPlusAuditLog.Web.Models;
+using Z.EntityFramework.Plus;
 
 namespace EFPlusAuditLog.Web.Controllers
 {
     public class TerminalsController : Controller
     {
         private readonly EFPContext _context;
+
+
 
         public TerminalsController(EFPContext context)
         {
@@ -57,8 +60,16 @@ namespace EFPlusAuditLog.Web.Controllers
         {
             if (ModelState.IsValid)
             {
+
+                var audit = new Audit();
+                audit.CreatedBy = "hadi"; // Optional
                 _context.Add(terminal);
-                await _context.SaveChangesAsync();
+                _context.SaveChanges(audit);
+
+
+
+                
+             //   await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             return View(terminal);

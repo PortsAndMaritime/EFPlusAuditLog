@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "11db5bbb382ebaec28a42e90fe3e753eff229a6c"
+    "signature": "1dcc5fa951a15982aff7f1a03a79275b5fb143e0"
   },
   "compilationOptions": {
     "defines": [
@@ -27,7 +27,8 @@
           "Microsoft.AspNetCore.App": "2.2.0",
           "Microsoft.AspNetCore.Razor.Design": "2.2.0",
           "Microsoft.NETCore.App": "2.2.0",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.2.0"
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.2.0",
+          "Z.EntityFramework.Plus.EFCore": "1.8.18"
         },
         "runtime": {
           "EFPlusAuditLog.Web.dll": {}
@@ -511,6 +512,20 @@
           "System.Runtime.Extensions": "4.3.0",
           "System.Threading": "4.3.0",
           "System.Threading.Tasks": "4.3.0"
+        }
+      },
+      "Z.EntityFramework.Plus.EFCore/1.8.18": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Relational": "2.2.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Z.EntityFramework.Plus.EFCore.dll": {
+            "assemblyVersion": "1.8.18.0",
+            "fileVersion": "1.8.18.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Z.EntityFramework.Plus.EFCore.dll": {}
         }
       },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
@@ -3708,6 +3723,13 @@
       "sha512": "sha512-PSoXN8h9YBhu51jm1YOcc9WCnXjkc0Xg97HzzYF2HUbEBwtz5YkfkRGlhCLKUrFtwgI4147e61a0mwo4hra0/g==",
       "path": "system.linq.parallel/4.3.0",
       "hashPath": "system.linq.parallel.4.3.0.nupkg.sha512"
+    },
+    "Z.EntityFramework.Plus.EFCore/1.8.18": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MGPjBMq6uxk7X+PydSxOxyay31epqQOBFqUICI76SDBW7PtzYDqYZtIN60G+FUG1lyRqWc0QTQmjtnmmjz1wlQ==",
+      "path": "z.entityframework.plus.efcore/1.8.18",
+      "hashPath": "z.entityframework.plus.efcore.1.8.18.nupkg.sha512"
     },
     "Microsoft.AspNet.WebApi.Client/5.2.6": {
       "type": "package",

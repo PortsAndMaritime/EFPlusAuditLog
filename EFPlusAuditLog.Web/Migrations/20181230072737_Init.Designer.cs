@@ -4,14 +4,16 @@ using EFPlusAuditLog.Web.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EFPlusAuditLog.Web.Migrations
 {
     [DbContext(typeof(EFPContext))]
-    partial class EFPContextModelSnapshot : ModelSnapshot
+    [Migration("20181230072737_Init")]
+    partial class Init
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
